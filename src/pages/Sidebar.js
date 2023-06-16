@@ -5,11 +5,12 @@ import { auth } from "../firebase-config";
 import { useNavigate } from "react-router";
 
 function Sidebar ({toggleSidebar, setToggleSidebar}){
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
     function signUserOut(){
         signOut(auth)
         localStorage.clear()
         console.log("logged out")
+        navigate("/login")
     }
 
     return(
@@ -25,23 +26,23 @@ function Sidebar ({toggleSidebar, setToggleSidebar}){
                 <div>
                     user info
                 </div>
-                <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-                    <li>
+                <div className="flex flex-col items-start">
+                    <button onClick={() => console.log("click")}>
                         Dashboard
-                    </li>
-                    <li>
+                    </button>
+                    <button>
                         Projects
-                    </li>
-                    <li>
+                    </button>
+                    <button>
                         Tasks
-                    </li>
-                    <li>
+                    </button>
+                    <button>
                         Calender
-                    </li>
-                    <li>
+                    </button>
+                    <button>
                         <button onClick={signUserOut}>Logout</button>
-                    </li>
-                </ul>
+                    </button>
+                </div>
             </div>
         </div>
     )

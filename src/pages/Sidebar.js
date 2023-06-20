@@ -27,10 +27,10 @@ function Sidebar ({toggleSidebar, setToggleSidebar}){
                     user info
                 </div>
                 <div className="flex flex-col items-start">
-                    <button onClick={() => console.log("click")}>
+                    <button onClick={() => navigate("/")}>
                         Dashboard
                     </button>
-                    <button>
+                    <button onClick={() => navigate("/projects")}>
                         Projects
                     </button>
                     <button>
@@ -39,8 +39,8 @@ function Sidebar ({toggleSidebar, setToggleSidebar}){
                     <button>
                         Calender
                     </button>
-                    <button>
-                        <button onClick={signUserOut}>Logout</button>
+                    <button onClick={signUserOut}>
+                        Logout
                     </button>
                 </div>
             </div>
